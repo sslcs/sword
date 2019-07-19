@@ -7,7 +7,7 @@ import random
 import win32api,win32con
 import json
 
-FILE_LAST = '剑来.txt'
+FILE_LAST = 'sword.txt'
 URL = "http://book.zongheng.com/book/672340.html"
 forum = "http://forum.zongheng.com/api/forums/postlist?bookId=672340"
 last = ''
