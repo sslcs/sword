@@ -70,6 +70,8 @@ def ask_leave() :
     tops = data_json['data']['topThread']
     for top in tops :
         title = top['title']
+        if not title :
+            title = top['content']
         # 论坛置顶的帖子标题包含‘请假’、‘么么哒’，视为请假！
         if title.find('请假') > 0 or title.find('么么哒') > 0 :
             return title
@@ -83,7 +85,6 @@ def check() :
         leave = ask_leave()
         if leave :
             # 请假内容不为空，说明又请假！
-            # 提示已请假！
             tip(leave)
         else :
             # 没有请假，打印检查时间。
