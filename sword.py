@@ -47,7 +47,7 @@ def get_least() :
 def check_time() :
     time_formatter = '%Y-%m-%d %H:%M:%S'
     time_str = datetime.datetime.now().strftime(time_formatter)
-    print('Checked @ %s' % (time_str))
+    print('Checked @ %s' % (time_str), flush = True)
 
 def tip(title) :
     # 打印最新章节标题或请假内容。
@@ -101,8 +101,8 @@ if __name__ == '__main__' :
     last = read_last()
     print("last : ", last)
     
-    # 随机60~120秒(1~2分钟)检查一下更新
+    # 随机120~180秒(2~3分钟)检查一下更新,太频繁有可能触发验证码
     while True :
         check()
-        s = 60 + 60 * random.random()
+        s = 60*2 + 60 * random.random()
         time.sleep(s)
